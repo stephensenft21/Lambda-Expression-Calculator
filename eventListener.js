@@ -23,6 +23,7 @@ let Calculate = {
         answer = Number(a)/Number(b)
         return answer
     },
+    
     performOperation:(operation) => {
     operation()
     document.getElementById("answer").value = answer.toFixed(2);
@@ -30,7 +31,11 @@ let Calculate = {
 }
 
 
-document.getElementById("add--button").addEventListener("click",Calculate.Add)
+
+document.getElementById("add--button").addEventListener("click",() => {
+    Calculate.Add()
+    Calculate.performOperation()
+})
 document.getElementById("subtract--button").addEventListener("click",Calculate.Subtract)
 document.getElementById("multi--button").addEventListener("click",Calculate.Multiply)
 document.getElementById("divide--button").addEventListener("click",Calculate.Divide)

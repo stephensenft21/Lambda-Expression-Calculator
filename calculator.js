@@ -6,14 +6,14 @@ let calcContainer = htmlBuilder.createElementWithText("div","Calculator","inputs
 
 
 
-let inputContainer = htmlBuilder.createElementWithText("div")
-let inputLabel1 = htmlBuilder.createElementWithText("span","First Input")
+let inputContainer = htmlBuilder.createElementWithText("div",undefined,undefined,"inputContainer")
+let inputLabel1 = htmlBuilder.createElementWithText("span","First Input",undefined,"Labels")
 let input1 = htmlBuilder.createElementWithText("input",undefined,"num1",)
-let inputLabel2 = htmlBuilder.createElementWithText("span","Second Input")
+let inputLabel2 = htmlBuilder.createElementWithText("span","Second Input", undefined,"Labels")
 let input2 = htmlBuilder.createElementWithText("input",undefined,"num2")
 
 
-let buttonContainer = htmlBuilder.createElementWithText("section","","math--functions")
+let buttonContainer = htmlBuilder.createElementWithText("div","","math--functions")
 let mathLabel = htmlBuilder.createElementWithText("span","Perform Functions",)
 let add = htmlBuilder.createElementWithText("button","+","add--button","add")
 let subtract = htmlBuilder.createElementWithText("button","-", "subtract--button","subtract")
@@ -25,10 +25,26 @@ let answerLabel = htmlBuilder.createElementWithText("span","Answer",undefined,"l
 let input3 = htmlBuilder.createElementWithText("input",undefined,"answer",undefined,"")
 input3.type = Text
 
+
+
 mainContainer.appendChild(calcForm)
 calcForm.appendChild(calcField)
 calcField.appendChild(calcContainer)
 calcContainer.appendChild(inputContainer)
+inputContainer.appendChild(inputLabel1)
+inputContainer.appendChild(input1)
+inputContainer.appendChild(inputLabel2)
+inputContainer.appendChild(input2)
+calcContainer.appendChild(buttonContainer)
+buttonContainer.appendChild(mathLabel)
+buttonContainer.appendChild(add)
+buttonContainer.appendChild(subtract)
+buttonContainer.appendChild(multiply)
+buttonContainer.appendChild(divide)
+calcField.appendChild(answerDiv)
+answerDiv.appendChild(answerLabel)
+answerDiv.appendChild(input3)
+
 
 
 
